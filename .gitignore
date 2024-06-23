@@ -2,4 +2,4 @@
 
 .env
 
-.Backend/db_auth_cred.js
+/Backend/db_auth_cred.js
