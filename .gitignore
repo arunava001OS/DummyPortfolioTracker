@@ -1,0 +1,5 @@
+/Backend/node_modules
+
+.env
+
+.Backend/db_suth_cred.js
