@@ -1,12 +1,15 @@
 //packages
 const express = require('express');
 const mongoose = require('mongoose');
+
+const bodyParser = require("body-parser");
+
 require('dotenv').config();
 
 // custom modules
 const routes = require('./routes/routes');
-//DB Connection
 
+//DB Connection
 const mongoString = process.env.DATABASE_URL;
 
 mongoose.connect(mongoString);
@@ -21,9 +24,9 @@ database.once('connected', () => {
 })
 
 // Server start
-
 const app = express();
-app.use('/api', routes)
+app.use(bodyParser.json()) // body parse new inclusion
+app.use('/api', routes);
 app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
-})
+});
